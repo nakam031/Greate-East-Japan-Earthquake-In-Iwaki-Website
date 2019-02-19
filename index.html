@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+    
+    <title>Iwaki City Earthquake Map</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="A layout example with a side menu that hides on mobile, just like the Pure website.">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/side_menu.css">
+    <!--<link rel="stylesheet" href="css/contact_form.css">-->
+    <script src="https://js.arcgis.com/3.22/" data-dojo-config="async:true"></script>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">The Great East Japan Earthquake</a>
+    </div>
+    <div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="#section1">Introduction</a></li>
+          <li><a href="#section2">Study Area</a></li>
+          <li><a href="#section3">Damage & Recovery</a></li>
+          <li><a href="#section4">Population</a></li>
+          <li><a href="#section5">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>    
+
+<div id="section1" class="container-fluid">
+  <div id="description" class='col-md-8'>
+  <h2>Introduction</h2>
+  <h3>Overview of the Great East Japan Earthquake</h3>
+  <p>
+    On March 11th, 2011, a destructive natural disaster known as the Great East Japan Earthquake occurred. A magnitude 9.1 earthquake occurred at the Pacific Sanriku offshore (Map 1) and the main disaster hit a northeastern part of Japan at 14:46 Tokyo time. Soon after the earthquake, a tsunami of around 40 m maximum height and 10 km maximum interior spilled onto the coastline. It ended up both destroying and swiping a broad swath of coastal land. 
+    <br>
+    <br>
+    As a result of the earthquake-tsunami combination, the Fukushima-Daiichi nuclear power plant exploded and caused a nuclear crisis with severe long-term impacts to the surrounding areas. The Great East Japan Earthquake resulted in the following: a) the destruction of over 270,000 buildings; b) over 400,000 people being evacuated; and c) over 20,000 casualties.
+    <br>
+    <br>
+    Usually, in case of natural disasters, local or regional governments will response and lead the situation. However, since the scale of disaster was extremely huge and destructive, regional governments could not function at the Great East Japan Earthquake event. It took a longer time to grasp the whole damaging situation because the affected area was too large to be observed by helicopters or planes, and many roads were destroyed that created a lot of isolated areas. The damaged area was about 500km north to south and 200km east to west.     
+  </p>
+  <br>
+  <div class="col-md-6">
+    <table id ="table" class="table table-striped">
+        <tr>
+          <th>Location</th>
+          <td>38.297 &#176;N  142.373 &#176;E</td>
+        </tr>
+        <tr>
+          <th>Magnitude</th>
+          <td>9.1</td>
+        </tr>
+        <tr>
+          <th>Depth</th>
+          <td>29 km</td>
+        </tr>
+        <tr>
+          <th>Origin Time</th>
+          <td>3/11/2011 2:46:24 PM (GMT +9)</td>
+        </tr>
+        <tr>
+          <th>Max Tsunami</th>
+          <td>40 m High, 10 km Interior</td>
+        </tr>
+        <tr>
+          <th>Casualties</th>
+          <td>20,000 +</td>
+        </tr>
+        <tr>
+          <th>Building Damage</th>
+          <td>270,000 +</td>
+        </tr>
+        <tr>
+          <th>Evacuee Population</th>
+          <td>400,000 +</td>
+        </tr>
+    </table>
+    <p id="name">Table 1. Main Shock Summary</p>
+  </div>
+  </div>
+  <br>
+  <div class="col-md-4">
+    <img id="image" src="img/Japan_General_round.png" alt="Map 1">
+    <p id="name">Map 1</p>
+  </div>
+</div>
+
+
+
+
+<div id="section2" class="container-fluid">
+  <div id="description" class='col-md-8'>
+    <h2>Study Area: Iwaki</h2>
+    <h3>Overview of the Iwaki City</h3>
+    <p>
+      Iwaki City, Fukushima which is located 200 km north of Tokyo was affected by the earthquake and tsunami. However, the city accepts evacuees from the “difficult-to-return-zone” which is within 30km from the nuclear power plant.
+      <br>
+        <b>Iwaki City is...</b>
+        <ul>
+          <li>1,232 &#13218; large and has more than 30,000 people.</li>
+          <li>Located 30 km south from Fukushima Daiichi Nuclear Power Plant (Map 2).</li>
+          <li>Facing the Pacific Ocean on east side, and the coastline is about 60 km long.</li>
+          <li>Accepting 20,000 evacuees from “difficult-to-return-zone”.</li>
+        </ul>
+    </p>
+    <h3>Damage in Iwaki City</h3>
+
+    <p>
+      Below is the summary of the main shock damage in the Iwaki City.
+
+      <ul>
+        <li>Shake Lasted more than 3 minutes.</li>
+        <li>Scale was <i>6 Lower*</i>.</li>
+        <li>The highest tsunami was 8.57 m in Toyoma neighborhood (Map 2).</li>
+        <li>Overall, 64 people lost their lives* (Table 2).</li>
+        <li>Water infrastructure took a month to recover.</li>
+        <li>Many Iwaki citizens chose to evacuate from Iwaki by themselves due to fear of invisible radiation.</li>
+      </ul>
+      <i>
+        *See table 2 for human and building damage in Iwaki.<br>
+        *<a target="_blank" href="http://www.jma.go.jp/jma/en/Activities/inttable.html"><u>Read about earthquake scaling.</u></a>
+      </i>
+      <br>
+      Iwaki had a harder time obtaining relief supplies and volunteers than other affected areas due to the radiation rumor.
+    </p>
+  <div class="col-md-6">
+    <table id ="table" class="table table-striped">
+      <caption>Loss of Lives</caption>
+        <tr>
+          <th>Number of Direct Death</th>
+          <td>293</td>
+        </tr>
+        <tr>
+          <th>Number of Related Death</th>
+          <td>134</td>
+        </tr>
+        <tr>
+          <th>Number of Missing People Reported As Death</th>
+          <td>37</td>
+        </tr>
+        <tr>
+          <th>Total Number of Death</th>
+          <td>464</td>
+        </tr>
+      </table>
+      <table id ="table" class="table table-striped">
+        <caption>Number of Damaged Residential Buildings</caption>
+        <tr>
+          <th>Complete Destruction</th>
+          <td>7,902</td>
+        </tr>
+        <tr>
+          <th>Large Scale Destruction</th>
+          <td>9,253</td>
+        </tr>
+        <tr>
+          <th>Half Destruction</th>
+          <td>33,146</td>
+        </tr>
+        <tr>
+          <th>Partial Destruction</th>
+          <td>40,879</td>
+        </tr>
+        <tr>
+          <th>Total Number of Damaged Buildings</th>
+          <td>91,180</td>
+        </tr>
+    </table>
+    <p id="name">Table 2. Human and Building Damage</p>
+  </div>
+  </div>
+    <div class="col-md-4">
+      <img id="image" src="img/tsunamioverview.png" alt="Map 2">
+      <p id="name">Map 2</p>
+    </div>
+</div>
+<div id="section3" class="container-fluid">
+  <div id = "description" class="col-md-12">
+    <h2>Damage and Recovery</h2>
+    <p>This map introduces some of the damages and recovery of the disaster in Iwaki. Each point contains 2 images that shows the aftermath of the disaster and the recovery (by 2016).
+    </p>
+    <div class="embed-container col-md-12">
+      <iframe
+        width="400" 
+        height="300" 
+        frameborder="1" 
+        scrolling="no" 
+        marginheight="0" 
+        marginwidth="0" 
+        title="Great East Japan Earthquake - Iwaki City Before And After"
+        src="http://umn.maps.arcgis.com/apps/Embed/index.html?webmap=d9cba6352f4c4c00827dca35c96b03d0&amp;extent=140.4963,36.7667,141.2303,37.2121&home=true&zoom=true&previewImage=true&scale=true&active_panel=legend&basemap_gallery=true&disable_scroll=true&theme=dark"></iframe>
+    </div>
+  </div>
+  <div class="col-md-12">
+      <p id="credit">
+        Photo Credit: Iwaki City, Hiroko Ishikawa, Fukushima Prefecture EMAC, Ken Midorikawa, Dai Suzuki, JGSDF 8th Infantry Regiment, Takayuki Saito, Board of Education, Koichi Hosokawa, Fukushima Prefecture EMAC, Iwaki Construction Office, Tokuji Watanabe<br>
+    *<a target="_blank" href="http://arcg.is/PyefW"><i><u>Jump to the actual web map</u></i></a></p>
+  </div>
+</div>
+<div id="section4" class="container-fluid">
+  <div id = "description" class="col-md-4">
+    <h2>Population In Iwaki</h2>
+    <h3>Temporary Houses</h3>
+    <p>
+      The map shows the temporary houses in Iwaki City. <br>
+      The Graph 1 shows the Population Change living in the temporary housing communities based on where the evacuees are from.<br>
+      <img id="graph" src="img/Graph_PopulationChangeinTempHouse.png" alt="Graph 1">
+    </p>
+    <p id="name">Graph 1</p>
+    <p>
+      <ul>
+        <li>Hirono, Naraha, Kawauchi, and Tomioka were eliminated from the “difficult-to-return zone”.</li>
+        <li>2464 people changed their addresses to Iwaki from the areas listed in the graph.</li>
+        <li>Some elderly population from the areas which were eliminated from “difficult-to-return zone” returned.</li>
+        <li>Iwaki citizens living in temporary houses are mainly the population who lost their houses by tsunami.</li>
+      </ul>
+    </p>
+  </div>
+  <div class="col-md-8">
+    <div class="embed-container" style="margin:80px;">
+      <iframe width="300" height="150" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="Temporary Housing Communities" src="http://umn.maps.arcgis.com/apps/Embed/index.html?webmap=bba5eb13527b477383bd7f1ecd085927&amp;extent=140.6615,36.9452,141.066,37.1162&home=true&zoom=true&previewImage=false&scale=true&legendlayers=true&basemap_gallery=true&disable_scroll=true&theme=light"></iframe>
+    </div>
+  </div>
+  <div id= "description" class="col-md-12">
+    <h3>Population Change</h3>
+    <p>
+    Iwaki is divided into 13 districts. Taira, Onahama, Uchigo are urban areas.
+    </p>
+  <div id="description" class="col-md-3">
+    <h4>Population Change from 2010-2013</h4>
+    <p>
+      Hisanohama has a higher population declining rate. <i>Why is that?</i><br>
+      <ul>
+        <li>It is located 30 km from the nuclear power plant.</li>
+        <li>Residential area was wiped out by tsunami and fire. (Check the map in Damage and Recovery section.)</li>
+      </ul><br>
+    </p>
+    <p>
+      Overall, the population is declining even when Iwaki accepted evacuees from other towns. <i>Why is that?</i><br>
+      <ul>
+        <li>People who evacuated to Iwaki kept their old addresses, so their number is not reflected to the census.</li>
+        <li>Many Iwaki citizens chose to evacuate outside of Iwaki by themselves.</li>
+      </ul>
+    </p>
+  </div>
+  <div class="col-md-3">
+    <img id="image" src="img/PopulationPercentage1013-1.png" alt="Map3">
+    <p id="name">Map 3</p>
+  </div>
+  <div id="description" class="col-md-3">
+    <h4>Population Change from 2013-2016</h4>
+    <p>
+      From 2013-2016, population is increasing in urban area. <i>Because....</i><br>
+      <ul>
+        <li>Some of the Iwaki citizens returned.</li>
+        <li>Nuclear power plant workers moved to Iwaki and commute from Iwaki.</li>
+        <li>Many evacuees from outside changed their addresses to Iwaki and became Iwaki citizens.</li>
+      </ul><br>
+      <i>(*Kawamae, Miwa, Tono, and Tabito are naturally decreasing.)</i>
+    </p>
+  </div> 
+  <div class="col-md-3">
+    <img id="image" src="img/Populationpercentage1316-1.png" alt="Map4">
+    <p id="name">Map 4</p>
+  </div>
+</div>
+</div>
+
+<div id="section5" class="container-fluid">
+  <div id="contact" class="col-md-6">
+    <h4>About</h4>
+    <p id="contact">I am a graduate student in University of Minnesota - Twin Cities in the Master in Geographic Information Science (GIS) program. I currently hold a Bachelor of Arts Degree from the University of Minnesota - Duluth in GIS with minor in Geography.</p>
+  </div>
+  <div id="contact" class="col-md-6">
+    <h4>Contact</h4>
+    <p id="contact">
+    Get connected with Linkedin:
+    <a target="_blank" href="https://www.linkedin.com/in/hitomi-nakamura-aa807aa9/" class="fa fa-linkedin"></a><br>
+    Contact me via: 
+    <button id="clickButton" class="btn btn-primary" type="button">email</button>
+    </p>
+  </div>
+  <!--
+  <div id="contact" class="col-md-6">
+    <div id="form_sample">
+    </div>
+    <script src="js/ui.js"></script>
+  </div>-->
+</div>
+<script>
+  document.getElementById("clickButton").onclick=aFunction;
+
+  function aFunction(){
+    alert("Please copy: nakam031@umn.edu");}
+
+</script>
+</body>
+
+</html>
